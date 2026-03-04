@@ -6,13 +6,11 @@ terraform {
       version = "~> 5.49.0"
     }
   }
-  backend "s3" {
-    bucket         = "dev-aman-tf-bucket"
-    region         = "us-east-1"
-    key            = "eks/terraform.tfstate"
-    dynamodb_table = "Lock-Files"
-    encrypt        = true
-  }
+ backend "s3" {
+  bucket = "bhuvan-tf-state-bucket-123"
+  key    = "eks/terraform.tfstate"
+  region = "us-east-1"
+}
 }
 
 provider "aws" {
